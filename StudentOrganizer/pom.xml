@@ -8,28 +8,32 @@
     <artifactId>StudentOrganizer</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!--компилируем под java 21делаем кодировку utf-8-->
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <!--устанавливаем зависимости (список библиотек)-->
+    <!-- нужно чтобы Maven находил нужный файл в Maven Central-->
     <dependencies>
         <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>21.0.5</version>
+            <groupId>org.openjfx</groupId> <!--кто выпустил библиотеку-->
+            <artifactId>javafx-controls</artifactId> <!--название библиотеки-->
+            <version>21.0.5</version> <!--версия-->
         </dependency>
     </dependencies>
 
+    <!--Плагины. Расширения самого Maven-->
     <build>
         <plugins>
             <plugin>
                 <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
+                <artifactId>javafx-maven-plugin</artifactId> <!--умеет запускать JavaFX-приложение командой javafx:run-->
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>organizer.App</mainClass>
+                    <mainClass>organizer.App</mainClass> <!--Указываем какой класс запускать первым-->
                 </configuration>
             </plugin>
         </plugins>
